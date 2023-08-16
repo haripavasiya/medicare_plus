@@ -1,5 +1,4 @@
 import 'package:medicare_plus/view/screen/auth/sign_up.dart';
-import 'package:medicare_plus/view/screen/otp/otp_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +7,7 @@ import '../../../utill/app_constants.dart';
 import '../../../utill/color_resources.dart';
 import '../../../utill/images.dart';
 import '../../../utill/styles.dart';
+import '../dashboard/dashboard_screen.dart';
 import '../privacy_policy/privacy_policy_screen.dart';
 import '../terms_condition/terms_condition_screen.dart';
 
@@ -20,10 +20,10 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
 
-  TextEditingController mono_Controller =TextEditingController();
-  TextEditingController password_Controller =TextEditingController();
-  final FocusNode mono_Focus = FocusNode();
-  final FocusNode password_Focus = FocusNode();
+  TextEditingController emailController =TextEditingController();
+  TextEditingController passwordController =TextEditingController();
+  final FocusNode emailFocus = FocusNode();
+  final FocusNode passwordFocus = FocusNode();
   bool isChecked=false;
 
   @override
@@ -41,11 +41,29 @@ class _SignInScreenState extends State<SignInScreen> {
     }
     return Scaffold(
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: AppConstants.itemWidth*0.04),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: AppConstants.itemHeight*0.01,),
+            SizedBox(height: AppConstants.itemHeight*0.15,),
             //App logo
             Image.asset(Images.logo_color,width: AppConstants.itemWidth*0.55,height: AppConstants.itemWidth*0.09,fit: BoxFit.fill,),
+            SizedBox(height: AppConstants.itemHeight*0.05,),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Sign in",style: montserratSamiBold.copyWith(color: ColorResources.BLACK,fontSize: AppConstants.itemWidth*0.055),),
+              ],
+            ),
+            SizedBox(height: AppConstants.itemHeight*0.04,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Lorem Ipsum is simply dummy text of the printing",style: montserratRegular.copyWith(color: ColorResources.BLACK.withOpacity(0.5),fontSize: AppConstants.itemWidth*0.035),),
+              ],
+            ),
             SizedBox(height: AppConstants.itemHeight*0.02,),
 
             //email
@@ -54,9 +72,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 decoration: BoxDecoration(
                     color: ColorResources.WHITE,
                     borderRadius:BorderRadius.circular(5),
-                    boxShadow: [
-                      BoxShadow(color: ColorResources.BLACK.withOpacity(0.4),blurRadius: 1),
-                    ]
+                  border: Border.all(color: ColorResources.GREY.withOpacity(0.5),width: 1)
                 ),
                 child:Row(
                   children: [
@@ -64,10 +80,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     Image.asset(Images.ic_email,width: 25,height: 25,color: ColorResources.BLACK,),
                     SizedBox(width: AppConstants.itemWidth*0.03,),
                     Expanded(child: TextFormField(
-                      controller: mono_Controller,
+                      controller: emailController,
                       maxLines: 1,
                       textAlign: TextAlign.left,
-                      focusNode: mono_Focus,
+                      focusNode: emailFocus,
                       keyboardType: TextInputType.number,
                       initialValue: null,
                       textInputAction: TextInputAction.next,
@@ -88,7 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ],
                 )
             ),
-            SizedBox(height: AppConstants.itemHeight*0.02,),
+            SizedBox(height: AppConstants.itemHeight*0.01,),
 
             //password
             Container(
@@ -96,9 +112,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 decoration: BoxDecoration(
                     color: ColorResources.WHITE,
                     borderRadius:BorderRadius.circular(5),
-                    boxShadow: [
-                      BoxShadow(color: ColorResources.BLACK.withOpacity(0.4),blurRadius: 1),
-                    ]
+                    border: Border.all(color: ColorResources.GREY.withOpacity(0.5),width: 1)
                 ),
                 child:Row(
                   children: [
@@ -106,10 +120,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     Image.asset(Images.ic_password,width: 25,height: 25,color: ColorResources.BLACK,),
                     SizedBox(width: AppConstants.itemWidth*0.03,),
                     Expanded(child: TextFormField(
-                      controller: password_Controller,
+                      controller: passwordController,
                       maxLines: 1,
                       textAlign: TextAlign.left,
-                      focusNode: password_Focus,
+                      focusNode: passwordFocus,
                       keyboardType: TextInputType.text,
                       initialValue: null,
                       textInputAction: TextInputAction.done,
@@ -147,7 +161,7 @@ class _SignInScreenState extends State<SignInScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(child:  RichText(
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   text: TextSpan(children: <TextSpan>[
                     TextSpan(
                         text: "By signing you agree to our ",
@@ -177,17 +191,17 @@ class _SignInScreenState extends State<SignInScreen> {
             //Button
             GestureDetector(
               onTap:() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const OTP_Screen(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen(),));
               },
               child: Container(
                 width: AppConstants.itemWidth,
-                margin: EdgeInsets.symmetric(vertical: AppConstants.itemWidth*0.02,horizontal: AppConstants.itemWidth*0.13),
+                margin: EdgeInsets.symmetric(vertical: AppConstants.itemWidth*0.02,horizontal: AppConstants.itemWidth*0.05),
                 padding: EdgeInsets.symmetric(vertical: AppConstants.itemWidth*0.035),
                 decoration: BoxDecoration(
                   color: ColorResources.COLOR_PRIMERY,
-                  borderRadius: BorderRadius.circular(AppConstants.itemWidth*0.3),
+                  borderRadius: BorderRadius.circular(AppConstants.itemWidth*0.02),
                 ),
-                child: Text("Log In",textAlign: TextAlign.center,style: montserratRegular.copyWith(color: ColorResources.WHITE,fontSize: AppConstants.itemWidth*0.04)),
+                child: Text("Sign In",textAlign: TextAlign.center,style: montserratMedium.copyWith(color: ColorResources.WHITE,fontSize: AppConstants.itemWidth*0.04)),
               ),
             ),
             SizedBox(height: AppConstants.itemHeight*0.005,),
@@ -196,10 +210,10 @@ class _SignInScreenState extends State<SignInScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Create a new account ? ",style: montserratRegular.copyWith(color: ColorResources.BLACK.withOpacity(0.5),fontSize: AppConstants.itemWidth*0.035),),
+                Text("Create a new account ? ",style: montserratRegular.copyWith(color: ColorResources.BLACK,fontSize: AppConstants.itemWidth*0.035),),
                 GestureDetector(
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Sign_Up_Screen(),)),
-                    child: Text("Sign Up",style: montserratRegular.copyWith(color: ColorResources.COLOR_PRIMERY,fontSize: AppConstants.itemWidth*0.035),))
+                    child: Text("Sign Up",style: montserratMedium.copyWith(color: ColorResources.COLOR_PRIMERY,fontSize: AppConstants.itemWidth*0.035),))
               ],
             ),
           ],

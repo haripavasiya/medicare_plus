@@ -20,12 +20,8 @@ class TitleView extends StatelessWidget {
         onTap: () => Navigator.pop(context),
         child: Container(
           margin: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(
-            color: ColorResources.COLOR_PRIMERY,
-            shape: BoxShape.circle,
-          ),
           alignment: Alignment.center,
-          child: const Icon(Icons.keyboard_arrow_left_outlined,color: ColorResources.WHITE,size: 24,)),
+          child: const Icon(Icons.arrow_back,color: ColorResources.BLACK,size: 24,)),
       ),
       title: Text(title,
           textAlign: TextAlign.center,

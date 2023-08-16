@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:medicare_plus/provider/otp_provider.dart';
 import 'package:medicare_plus/provider/splash_provider.dart';
 import 'package:medicare_plus/provider/theme_provider.dart';
 import 'package:medicare_plus/utill/app_constants.dart';
@@ -23,7 +22,6 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(create: (context) => di.sl<SplashProvider>()),
         ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
-        ChangeNotifierProvider(create: (context) => di.sl<OTPProvider>()),
       ],
       child: MyApp(),
     ));
@@ -35,7 +33,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Color(0xFF703ED1), statusBarBrightness: Brightness.light));
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Color(0xFF7274F2), statusBarBrightness: Brightness.light));
     PreferenceUtils.init();
     return MaterialApp(
       title: AppConstants.appNAME,

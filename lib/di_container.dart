@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'data/datasource/remote/dio/dio_client.dart';
 import 'data/datasource/remote/dio/logging_interceptor.dart';
 import 'data/repository/home_repo.dart';
-import 'provider/otp_provider.dart';
 import 'provider/splash_provider.dart';
 import 'provider/theme_provider.dart';
 import 'utill/app_constants.dart';
@@ -22,7 +21,6 @@ Future<void> init() async {
   // Provider
   sl.registerFactory(() => SplashProvider());
   sl.registerFactory(() => ThemeProvider(sharedPreferences: sl()));
-  sl.registerFactory(() => OTPProvider());
 
   // External
   PreferenceUtils.init();

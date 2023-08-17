@@ -7,17 +7,19 @@ import '../../../utill/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
-  const CustomButton(this.buttonText);
+  const CustomButton(this.buttonText, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: AppConstants.itemWidth*0.2),
+      width: AppConstants.itemWidth,
+      margin: EdgeInsets.symmetric(vertical: AppConstants.itemWidth*0.02,horizontal: AppConstants.itemWidth*0.05),
       padding: EdgeInsets.symmetric(vertical: AppConstants.itemWidth*0.04),
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-
+      decoration: BoxDecoration(
+        color: ColorResources.COLOR_PRIMERY,
+        borderRadius: BorderRadius.circular(AppConstants.itemWidth*0.02),
       ),
+      alignment: Alignment.center,
       child: Text(buttonText,style: montserratMedium.copyWith(color: ColorResources.WHITE,fontSize: AppConstants.itemWidth*0.04),),
     );
   }

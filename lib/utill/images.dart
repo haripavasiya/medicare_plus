@@ -28,4 +28,6 @@ class Images {
   static const String ic_chat = 'assets/image/ic_chat.png';
   static const String ic_hi = 'assets/image/ic_hi.png';
   static const String ic_search = 'assets/image/ic_search.png';
+  static const String ic_call = 'assets/image/ic_call.png';
+  static const String ic_video = 'assets/image/ic_video.png';
 }

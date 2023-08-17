@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:medicare_plus/model/doctor_model.dart';
 import 'package:medicare_plus/view/baseview/button/custom_button.dart';
+import 'package:medicare_plus/view/screen/appointment/appointment_screen.dart';
 
 import '../../../utill/app_constants.dart';
 import '../../../utill/color_resources.dart';
@@ -345,7 +346,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           ],
                         ),
                         const Divider(thickness: 1,),
-                        const CustomButton("Book an Appointment"),
+                        GestureDetector(
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentScreen(),)),
+                            child: const CustomButton("Book an Appointment")),
                       ],
                     ),
                   ),

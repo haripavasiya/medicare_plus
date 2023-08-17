@@ -5,6 +5,7 @@ import '../../../utill/color_resources.dart';
 import '../../../utill/images.dart';
 import '../../../utill/styles.dart';
 import '../../baseview/app_bar.dart';
+import '../doctor/doctor_screen.dart';
 
 class ServicesListScreen extends StatefulWidget {
   const ServicesListScreen({Key? key}) : super(key: key);
@@ -29,19 +30,22 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
             children: [
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Cardiologist", Color(0xFFFFAE99), Color(0xFFFF7854), Images.ic_cardiologist),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Cardiologist", const Color(0xFFFFAE99), const Color(0xFFFF7854), Images.ic_cardiologist),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Orthopedic", Color(0xFF68EEBE), Color(0xFF30D99C), Images.ic_orthopedic),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Orthopedic", const Color(0xFF68EEBE), const Color(0xFF30D99C), Images.ic_orthopedic),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Dentist", Color(0xFFFDD497), Color(0xFFFDA725), Images.ic_dentist),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Dentist", const Color(0xFFFDD497), const Color(0xFFFDA725), Images.ic_dentist),
                 ),
               ),
             ],
@@ -51,19 +55,22 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
             children: [
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Neurologist", Color(0xFF6AC368), Color(0xFF038E00), Images.ic_neurologist),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Neurologist", const Color(0xFF6AC368), const Color(0xFF038E00), Images.ic_neurologist),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Radiologist", Color(0xFF68D6EE), Color(0xFF21B9DA), Images.ic_radiologist),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Radiologist", const Color(0xFF68D6EE), const Color(0xFF21B9DA), Images.ic_radiologist),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Surgeon", Color(0xFFFE7E7E), Color(0xFFFD1B1B), Images.ic_surgeon),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Surgeon", const Color(0xFFFE7E7E), const Color(0xFFFD1B1B), Images.ic_surgeon),
                 ),
               ),
             ],
@@ -73,17 +80,19 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
             children: [
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Ophthalmology", Color(0xFF948BFF), Color(0xFF4133E8), Images.ic_ophthalmology),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Ophthalmology", const Color(0xFF948BFF), const Color(0xFF4133E8), Images.ic_ophthalmology),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
               Expanded(
                 child: GestureDetector(
-                  child: ServiceView("Pathology", Color(0xFFFF8BF3), Color(0xFFE237D1), Images.ic_pathology),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AllDoctorScreen(),)),
+                  child: ServiceView("Pathology", const Color(0xFFFF8BF3), const Color(0xFFE237D1), Images.ic_pathology),
                 ),
               ),
               SizedBox(width: AppConstants.itemWidth*0.03,),
-              Expanded(
+              const Expanded(
                 child: SizedBox(),
               ),
             ],

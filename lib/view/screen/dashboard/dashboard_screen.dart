@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../utill/color_resources.dart';
 import '../../../utill/images.dart';
 import '../../../utill/styles.dart';
+import '../appointment/my_appointment_screen.dart';
+import '../chat/chat_screen.dart';
 import '../home/home_screen.dart';
+import '../profile/profile_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -23,9 +26,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
     pageIndex=0;
     screenList=[
       const HomeScreen(),
-      const HomeScreen(),
-      const HomeScreen(),
-      const HomeScreen(),
+      const MyAppointmentScreen(),
+      const ChatScreen(),
+      const ProfileScreen(),
     ];
   }
 

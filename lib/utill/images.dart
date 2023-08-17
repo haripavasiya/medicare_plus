@@ -31,4 +31,5 @@ class Images {
   static const String ic_call = 'assets/image/ic_call.png';
   static const String ic_video = 'assets/image/ic_video.png';
   static const String ic_like = 'assets/image/ic_like.png';
+  static const String ic_send = 'assets/image/ic_send.png';
 }
